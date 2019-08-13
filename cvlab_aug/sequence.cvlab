@@ -1,0 +1,272 @@
+{
+  "_filetype": "CV-Lab diagram save file. See: https://github.com/cvlab-ai/cvlab ",
+  "_type": "diagram",
+  "_version": "1.2.1",
+  "elements": {
+    "1": {
+      "_type": "element",
+      "class": "AugScratches",
+      "gui_options": {
+        "position": [
+          25020,
+          24610
+        ],
+        "preview_size": 246.0,
+        "show_parameters": true,
+        "show_preview": true,
+        "show_sliders": false
+      },
+      "module": "cvlab_aug",
+      "parameters": {
+        "": "",
+        "num_scratches": 20,
+        "p": 1
+      },
+      "unique_id": "744282"
+    },
+    "2": {
+      "_type": "element",
+      "class": "ImageLoader",
+      "gui_options": {
+        "position": [
+          24480,
+          24610
+        ],
+        "preview_size": 246.0,
+        "show_parameters": true,
+        "show_preview": true,
+        "show_sliders": null
+      },
+      "module": "cvlab.diagram.elements.image_io",
+      "parameters": {
+        "path": "lena.jpg"
+      },
+      "unique_id": "065366"
+    },
+    "3": {
+      "_type": "element",
+      "class": "AugElasticTransformation",
+      "gui_options": {
+        "position": [
+          25280,
+          24610
+        ],
+        "preview_size": 246.0,
+        "show_parameters": true,
+        "show_preview": true,
+        "show_sliders": false
+      },
+      "module": "cvlab_aug",
+      "parameters": {
+        "": "",
+        "alpha": 100.0,
+        "alpha_affine_range": 10.0,
+        "border_mode": 4,
+        "interpolation": 1,
+        "p": 1,
+        "sigma": 10.0
+      },
+      "unique_id": "987705"
+    },
+    "6": {
+      "_type": "element",
+      "class": "AugOpticalDistortion",
+      "gui_options": {
+        "position": [
+          25020,
+          25040
+        ],
+        "preview_size": 246.0,
+        "show_parameters": true,
+        "show_preview": true,
+        "show_sliders": false
+      },
+      "module": "cvlab_aug",
+      "parameters": {
+        "": "",
+        "distort_limit_x": [
+          -0.003,
+          0.003
+        ],
+        "distort_limit_y": [
+          -0.003,
+          0.003
+        ],
+        "interpolation": 1,
+        "p": 1,
+        "shift_limit": [
+          -0.1,
+          0.1
+        ]
+      },
+      "unique_id": "382217"
+    },
+    "9": {
+      "_type": "element",
+      "class": "AugCutOut",
+      "gui_options": {
+        "position": [
+          24760,
+          25040
+        ],
+        "preview_size": 121.0,
+        "show_parameters": true,
+        "show_preview": true,
+        "show_sliders": false
+      },
+      "module": "cvlab_aug",
+      "parameters": {
+        "": "",
+        "iterations": 2,
+        "p": 1,
+        "size_range": [
+          0.1,
+          0.2
+        ]
+      },
+      "unique_id": "051636"
+    },
+    "12": {
+      "_type": "element",
+      "class": "AugFlashlight",
+      "gui_options": {
+        "position": [
+          24480,
+          25040
+        ],
+        "preview_size": 121.0,
+        "show_parameters": true,
+        "show_preview": true,
+        "show_sliders": false
+      },
+      "module": "cvlab_aug",
+      "parameters": {
+        "": "",
+        "alpha": 0.6,
+        "bg_darkness": 100,
+        "p": 1,
+        "radius": 0.4
+      },
+      "unique_id": "351155"
+    },
+    "13": {
+      "_type": "element",
+      "class": "AugGaussianBlur",
+      "gui_options": {
+        "position": [
+          24760,
+          24610
+        ],
+        "preview_size": 246.0,
+        "show_parameters": true,
+        "show_preview": true,
+        "show_sliders": false
+      },
+      "module": "cvlab_aug",
+      "parameters": {
+        "": "",
+        "ksize_norm": 0.1,
+        "p": 1,
+        "sigma": 5
+      },
+      "unique_id": "462373"
+    },
+    "14": {
+      "_type": "element",
+      "class": "AugJpegNoise",
+      "gui_options": {
+        "position": [
+          25280,
+          25040
+        ],
+        "preview_size": 246.0,
+        "show_parameters": true,
+        "show_preview": true,
+        "show_sliders": false
+      },
+      "module": "cvlab_aug",
+      "parameters": {
+        "": "",
+        "p": 1,
+        "quality": 0.270004
+      },
+      "unique_id": "415852"
+    }
+  },
+  "params": [],
+  "wires": {
+    "0": {
+      "from_element": 2,
+      "from_output": "output",
+      "to_element": 13,
+      "to_input": "input"
+    },
+    "1": {
+      "from_element": 2,
+      "from_output": "output",
+      "to_element": 13,
+      "to_input": "input"
+    },
+    "2": {
+      "from_element": 13,
+      "from_output": "output",
+      "to_element": 1,
+      "to_input": "input"
+    },
+    "3": {
+      "from_element": 1,
+      "from_output": "output",
+      "to_element": 14,
+      "to_input": "input"
+    },
+    "4": {
+      "from_element": 1,
+      "from_output": "output",
+      "to_element": 3,
+      "to_input": "input"
+    },
+    "5": {
+      "from_element": 3,
+      "from_output": "output",
+      "to_element": 14,
+      "to_input": "input"
+    },
+    "6": {
+      "from_element": 3,
+      "from_output": "output",
+      "to_element": 12,
+      "to_input": "input"
+    },
+    "7": {
+      "from_element": 12,
+      "from_output": "output",
+      "to_element": 14,
+      "to_input": "input"
+    },
+    "8": {
+      "from_element": 12,
+      "from_output": "output",
+      "to_element": 9,
+      "to_input": "input"
+    },
+    "9": {
+      "from_element": 9,
+      "from_output": "output",
+      "to_element": 6,
+      "to_input": "input"
+    },
+    "10": {
+      "from_element": 6,
+      "from_output": "output",
+      "to_element": 14,
+      "to_input": "input"
+    },
+    "11": {
+      "from_element": 2,
+      "from_output": "output",
+      "to_element": 13,
+      "to_input": "input"
+    }
+  },
+  "zoom_level": 1.0
+}
